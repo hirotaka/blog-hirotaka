@@ -1,0 +1,110 @@
+/*
+Name: Bootstrap
+Description: Theme based on bootstrap.
+URL: http://hirotaka.me/
+Author: Hirotaka Mizutani <hirotaka@mizutani.to>
+Author URL: http://hirotaka.me/
+Version: 0.0.1
+*/
+
+@charset "UTF-8";
+
+/*
+Skin Name: Bootstrap - Core Style
+Author: http://twitter.github.com/bootstrap/
+*/
+
+
+/* bootstrap */
+body {
+    padding-top: 60px;
+}
+
+/*========================================
+  #header
+========================================*/
+#bread_crumb ol {
+    margin: 1em 0px;
+    list-style: none;
+}
+
+#bread_crumb ol li {
+    display: inline;
+    font-size: 14px;
+}
+
+#bread_crumb ol li:before {
+    content: " > ";
+}
+
+#bread_crumb ol li:first-child:before {
+    content: "";
+}
+
+section .header ul.info {
+    margin: 0px 0px 10px 0px;
+    padding: 0;
+    list-style: none;
+}
+
+section .header ul.info li {
+    display: inline;
+    margin-top: 8px;
+}
+section .header ul.info li.tags {
+    padding-right: 0px;
+}
+
+section .header ul.info li.tags ul {
+    margin: 0px;
+    padding-right: 10px;
+}
+
+section .header ul.info li.tags ul li {
+    margin: 0px;
+    padding-right: 0px;
+    font-size: 100%;
+    border: none;
+}
+
+section .header ul.info ul li:before {
+    content: ", ";
+}
+
+section .header ul.info ul li:first-child:before {
+    content: "";
+}
+
+section .body {
+    clear: both;
+    margin: 0;
+    padding: 1em 0px;
+}
+
+section .footer {
+    margin: 0;
+    padding: 1em 0px;
+}
+
+/* ul.info
+   ---------------*/
+section ul.info {
+    margin: 0 0 1em 0;
+    padding: 0.3em 0;
+    list-style-type: none;
+}
+
+section ul.info li {
+    margin: 0.3em 10px 0.3em 0;
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+    color: #444;
+    float: left;
+    font-size: 85%;
+}
+
+section ul.info li a {
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+<% if entry? %>
+    <title><%= @entry.title %> - <%= @site.title %></title>
+<% else %>
+    <title><%= @site.title %></title>
+<% end %>
+    <meta name="description" content="<%= @site.meta_description %>" />
+    <meta name="keywords" content="<%= @site.meta_keywords %>" />
+    <link href="/index.atom" rel="alternate" title="<%= @title %>" type="application/atom+xml" />
+    <link rel="shortcut icon" href="<%= @theme.path %>/favicon.ico" />
+    <link rel="stylesheet" href="<%= @theme.path %>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%= @theme.path %>/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="<%= @theme.path %>/css/style.css">
+    <!-- syntaxhighter-->
+    <link href="<%= @theme.path %>/syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="<%= @theme.path %>/syntaxhighlighter/styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+
+    <!-- syntaxhighter-->
+    <script type="text/javascript" src="<%= @theme.path %>/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= @theme.path %>/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="<%= @theme.path %>/syntaxhighlighter/scripts/shAutoloader.js"></script>
+    <script type="text/javascript" src="<%= @theme.path %>/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <%= header %>
+    <script>
+    $(document).ready(function(){
+      SyntaxHighlighter.autoloader(
+        "bash                     <%= @theme.path %>/syntaxhighlighter/scripts/shBrushBash.js",
+        "css                      <%= @theme.path %>/syntaxhighlighter/scripts/shBrushCss.js",
+        "diff                     <%= @theme.path %>/syntaxhighlighter/scripts/shBrushDiff.js",
+        "html xml xhtml           <%= @theme.path %>/syntaxhighlighter/scripts/shBrushXml.js",
+        "js jscript javascript    <%= @theme.path %>/syntaxhighlighter/scripts/shBrushJScript.js",
+        "perl pl                  <%= @theme.path %>/syntaxhighlighter/scripts/shBrushPerl.js",
+        "plain                    <%= @theme.path %>/syntaxhighlighter/scripts/shBrushPlain.js",
+        "python py                <%= @theme.path %>/syntaxhighlighter/scripts/shBrushPython.js",
+        "ruby                     <%= @theme.path %>/syntaxhighlighter/scripts/shBrushRuby.js",
+        "sql                      <%= @theme.path %>/syntaxhighlighter/scripts/shBrushSql.js",
+        "tt tt2                   <%= @theme.path %>/syntaxhighlighter/scripts/shBrushTT2.js",
+        "yaml yml                 <%= @theme.path %>/syntaxhighlighter/scripts/shBrushYAML.js"
+      );
+      SyntaxHighlighter.all();
+    });
+    </script>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top"> 
+      <div class="navbar-inner"> 
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/"><%= @site.title %></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+            </ul> 
+          </div>
+        </div> 
+      </div>
+    </div> 
+    <div class="container">
+      <div class="content">
+        <%= yield %>
+        <hr/>
+        <footer class="footer">
+          <p>&copy; hirotaka <%= Time.now.year %></p> 
+        </footer> 
+      </div> 
+    </div>
+  </body>
+</html>

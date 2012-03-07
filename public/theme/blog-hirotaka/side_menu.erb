@@ -1,0 +1,39 @@
+<dt>Recent Entries</dt>
+<dd>
+  <ul>
+    <% Post.recent(5).each do |post| %>
+      <li><a href="<%= post.link %>"><%= post.title %></a></li>
+    <% end %>
+  </ul>
+</dd>
+<dt>Categories</dt>
+<dd><%= category_tree %></dd>
+<dt>Tags</dt>
+<dd>
+  <ul>
+    <% Tag.all.each do |tag| %>
+      <li><a href="<%= tag.link %>"><%= tag.name %></a></li>
+    <% end %>
+  </ul>
+</dd>
+<dt>Archives</dt>
+<dd>
+  <ul>
+    <% months.each do |month| %>
+      <li><a href="/<%= month.year %>/<%= month.month %>/"><%= month.year %>/<%= month.month %></a></li>
+    <% end %>
+  </ul>
+</dd>
+<dt>Search</dt>
+<dd>
+  <form action="/search/" method="get">
+    <input type="text" name="query" class="span2" />
+    <button class="btn small" onclick="submit()">Search</button>
+  </form>
+</dd>
+<dt>Others</dt>
+<dd>
+  <ul>
+    <li><a href="/index.atom">Feed</a></li>
+  </ul>
+</dd>
