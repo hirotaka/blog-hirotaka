@@ -32,12 +32,12 @@
       <ul class="pager">
         <% if @posts.pager.previous_page %>
           <li class="previous">
-            <a href="?page=<%= @posts.pager.previous_page %>">&larr; Older</a>
+            <a href="?page=<%= @posts.pager.previous_page %>">&larr; Newer</a>
           </li>
         <% end %>
         <% if @posts.pager.next_page %>
           <li class="next">
-            <a href="?page=<%= @posts.pager.next_page %>">Newer &rarr;</a>
+            <a href="?page=<%= @posts.pager.next_page %>">Older &rarr;</a>
           </li>
         <% end %>
       </ul>
